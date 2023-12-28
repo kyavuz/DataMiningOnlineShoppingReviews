@@ -168,16 +168,18 @@ namespace DataMiningOnlineShoppingReviews
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            try
-            {
-                // Dosyayı sil
-                File.Delete(datasetFilePath);
-                MessageBox.Show("Dataset başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Dataset silinirken bir hata oluştu: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // since the "get dataset" button is not working properly, this lines commented out. (we need the dataset)
+
+            //try
+            //{
+            //    // Dosyayı sil
+            //    File.Delete(datasetFilePath); 
+            //    MessageBox.Show("Dataset başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"Dataset silinirken bir hata oluştu: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
     }
 }
