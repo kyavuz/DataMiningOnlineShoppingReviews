@@ -1,57 +1,50 @@
 # DataMiningOnlineShoppingReviews
-##########################################################################################################################
-##															##
-##					Measurement of Customer Satisfaction Using				 	##
-##					User Comments of Products on Shopping Sites					##
-##							Kagan Yavuz							##
-##															##
-##########################################################################################################################
+#######################################################################################
+# Measurement of Customer Satisfaction Using User Comments of Products on Online Shopping Sites
+### Kagan Yavuz
+#
 
-***	Proje için C# dilinde basit bir arayüz tasarlanmıştır. "DataMiningOnlineShoppingReviews" klasörü içinden
-***	"DataMiningOnlineShoppingReviews.exe" uygulaması açılarak sırayla "Get Dataset" - "Sentiment Analysis" ve 
-***	"Keyword Analysis" butonlarına tıklayarak program çalıştırılabilir, sonuçlar ekranda görülebilir.
+***	A simple interface has been designed for the project in C#.
 
-***	Projeyi arayüz olmadan çalıştırmak için :
+You can run the program by opening the "DataMiningOnlineShoppingReviews.exe" application from the "DataMiningOnlineShoppingReviews" folder and clicking on the "Get Dataset" - "Sentiment Analysis" and "Keyword Analysis" buttons sequentially, and view the results on the screen.
+#
+***	To run the project without the interface:
 
-Proje 3 aşamadan oluşmaktadır:
-	1) Python Selenium ile Amazon.com sitesinden kullanıcı yorumlarını alıp bir .txt dosyasına kaydetmek
-	2) Oluşturulan .txt dosyası kullanılarak Python TextBlob kütüphanesi ile sentiment analysis yapmak
-	3) Oluşturulan .txt dosyası kullanılarak Python NLTK kütüphanesi ile datasetteki gereksiz kelimeler
-	   ve bağlaçlar çıkarıldıktan sonra Python TextBlob kütüphanesi kullanılarak keyword analysis yapmak
+The project consists of three stages:
 
-1) Python Selenium ile Amazon.com sitesinden kullanıcı yorumlarını alıp bir .txt dosyasına kaydetmek :
-	1.aşamada kodun çalıştırılacağı bilgisayarda python, selenium ve chromedriver yüklendikten sonra 
-	"SeleniumProjectToGetData" projesi açılmalıdır. İlgili projenin main.py kodunun 10.satırında bilgisayara daha 
-	önce yüklenmiş olan chromedriver'ın executable path'i verilmelidir.
+1- Using Python Selenium to fetch user reviews from Amazon.com and save them into a .txt file.
+
+2- Performing sentiment analysis on the created .txt file using the Python TextBlob library.
+
+3- Performing keyword analysis on the created .txt file using the Python NLTK library after removing
+unnecessary words and conjunctions from the dataset, and then using the Python TextBlob library.
+
+1) Using Python Selenium to fetch user reviews from Amazon.com and save them into a .txt file:
+
+In the first stage, after installing python, selenium, and chromedriver on the computer where the code will be run, the "SeleniumProjectToGetData" project should be opened. The executable path of the chromedriver previously installed on the computer should be provided on line 10 of the main.py code of the relevant project.
+
+Then, when the main.py code of the relevant project is run, it will be seen that a file named "user_reviews.txt" is created in the main directory of the project. This file contains user reviews of the product from the Amazon.com link provided on line 17 of the main.py code. 
+
+After creating the "user_reviews.txt" file by following these steps, you can proceed to the second stage.
+
+2) Performing sentiment analysis on the created .txt file using the Python TextBlob library:
+
+In the second stage of the project, sentiment analysis is performed. The "user_reviews.txt" file created in the first stage should be copied to the main directory of the "TextBlobProjectToSentimentAnalysis" project and the main.py code of the "TextBlobProjectToSentimentAnalysis" project can be directly run. 
+
+As an output of this project, the following values will be found:
+- Sentiment Score (polarity)
+- Sentiment Label
+- Subjectivity
+
+3) Performing keyword analysis on the created .txt file using the Python NLTK library after removing unnecessary words and conjunctions from the dataset, and then using the Python TextBlob library:
+
+In the third stage of the project, keyword analysis is performed. The "user_reviews.txt" file created in the first stage should be copied to the main directory of the "TextBlobProjectToKeywordAnalysis" project and the main.py code of the "TextBlobProjectToKeywordAnalysis" project can be directly run.
 	
-	Sonra ilgili projenin main.py kodu çalıştırıldığında projenin ana dizininde "user_reviews.txt" isimli dosyanın 
-	oluştuğu görülecektir. Bu dosya, "main.py" kodunun 17.satırında verilmiş olan Amazon.com linkindeki ürünün 
-	kullanıcı yorumlarıdır.
-	
-	"user_reviews.txt" dosyası bu adımlar izlenerek oluşturulduktan sonra 2.aşamaya geçilebilir.
+As an output of this project, the following values will be found:
+- The most used words in the dataset
+- The most used 2-word phrases in the dataset
+- The most used 3-word phrases in the dataset
+#
+Thank you,
 
-2) Oluşturulan .txt dosyası kullanılarak Python TextBlob kütüphanesi ile sentiment analysis yapmak :
-	Projenin 2.aşamasında duygu analizi yapılmaktadır. 1.aşamada oluşturulan "user_reviews.txt" dosyası, 
-	"TextBlobProjectToSentimentAnalysis" projesinin ana dizinine kopyalanarak "TextBlobProjectToSentimentAnalysis" 
-	projesinin main.py kodu doğrudan çalıştırılabilir. 
-	
-	Bu projenin output'u olarak
-		Duygu Skoru (polarity)
-		Duygu Etiketi
-		Konu Duyarlılık
-	değerleri bulunacaktır.
-
-3) Oluşturulan .txt dosyası kullanılarak Python NLTK kütüphanesi ile datasetteki gereksiz kelimeler ve bağlaçlar 
-çıkarıldıktan sonra Python TextBlob kütüphanesi kullanılarak keyword analysis yapmak :
-	Projenin 3.aşamasında ise keyword analysis yapılmaktadır. 1.aşamada oluşturulan "user_reviews.txt" dosyası, 
-	"TextBlobProjectToKeywordAnalysis" projesinin ana dizinine kopyalanarak "TextBlobProjectToKeywordAnalysis" 
-	projesinin main.py kodu doğrudan çalıştırılabilir.
-	
-	Bu projenin output'u olarak
-		dataset'te en çok kullanılan kelimeler
-		dataset'te en çok kullanılan 2'li kelime grupları
-		dataset'te en çok kullanılan 3'lü kelime grupları
-	değerleri bulunacaktır.
-
-													Teşekkür ederim
-												  Kağan Yavuz
+Kagan Yavuz
